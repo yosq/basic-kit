@@ -1,0 +1,13 @@
+basic.forever(function () {
+    if (pins.analogReadPin(AnalogPin.P1) < 10) {
+        music.playMelody("- - - - - - - - ", 120)
+    } else if (pins.analogReadPin(AnalogPin.P1) < 80) {
+        music.playMelody("- - - - - - - - ", 120)
+    } else if (pins.analogReadPin(AnalogPin.P1) < 130) {
+        music.playMelody("- - - - - - - - ", 120)
+    } else if (pins.analogReadPin(AnalogPin.P1) < 160) {
+        music.playMelody("- - - - - - - - ", 120)
+    } else if (pins.analogReadPin(AnalogPin.P1) < 600) {
+        music.playMelody("- - - - - - - - ", 120)
+    }
+})
