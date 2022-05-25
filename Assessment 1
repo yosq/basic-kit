@@ -1,0 +1,17 @@
+basic.showString("K")
+pins.setPull(DigitalPin.P1, PinPullMode.PullUp)
+pins.servoWritePin(AnalogPin.P2, 0)
+basic.forever(function () {
+    if (pins.analogReadPin(AnalogPin.P0) < 10) {
+        basic.showIcon(IconNames.Happy)
+        basic.pause(500)
+        basic.showString("K")
+    } else if (pins.analogReadPin(AnalogPin.P0) < 80) {
+        pins.servoWritePin(AnalogPin.P2, 90)
+        basic.pause(500)
+        pins.servoWritePin(AnalogPin.P2, 0)
+    }
+    if (pins.digitalReadPin(DigitalPin.P1) == 0) {
+        basic.showNumber(randint(0, 20))
+    }
+})
