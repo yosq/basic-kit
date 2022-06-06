@@ -1,0 +1,14 @@
+function play () {
+    music.playMelody("E B C5 A B G A F ", 120)
+}
+let audio = 0
+let brightness = 0
+basic.showNumber(input.compassHeading())
+pins.digitalWritePin(DigitalPin.P1, 1)
+basic.forever(function () {
+    brightness = pins.analogReadPin(AnalogPin.P2)
+    audio = brightness / 4
+    pins.analogWritePin(AnalogPin.P1, audio)
+    music.setVolume(audio)
+    play()
+})
